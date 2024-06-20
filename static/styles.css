@@ -1,0 +1,84 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    color: #333;
+    background-image: url(/static/assets/background-tavern.png);
+    background-position: center center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Optional: Fix the background image's position */
+    background-size: cover; /* Cover the entire area, might crop the image */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button {
+    border: none; /* Removes the default border */
+    outline: none; /* Removes the focus outline */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    cursor: pointer; /* Changes the cursor to a pointer when hovered over the button */
+}
+
+#startRecord, #startPressed, #stopRecord, #stopPressed, #startRecordDay, #stopRecordDay, #startPressedDay, #stopPressedDay{
+   padding-top: 575px;
+    width: 250px; /* Adjust to the actual width of your image */
+    height: 100px; /* Adjust to the actual height of your image */
+}
+
+
+
+#chatBox {
+    position: relative; /* This makes it a reference point for absolutely positioned child elements */
+    width: 700px;
+    height: 468px;
+    background-image: url('/static/assets/pixel-chat-box.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 250px;
+}
+
+
+.buttons-nighttime {
+    margin-top: 20px; /* Space above the buttons */
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+}
+
+
+.chat-text {
+    position: absolute; /* Positioning relative to chatBox */
+    top: 10%; /* Distance from the top of the chatBox */
+    left: 10%; /* Distance from the left of the chatBox */
+    right: 10%; /* Ensures padding from the right side */
+    bottom: 10%; /* Ensures padding from the bottom side */
+    color: #fff; /* Text color */
+    text-shadow:
+    0 0 8px orange;
+    
+    overflow-y: auto; /* Allows for scrolling if content overflows */
+
+    font-family: Minecraft;
+}
+  
+#gpt-prefix {
+    color: orange; /* Example: A green color for the "GPT:" prefix */
+    font-weight: bold; /* Optional: Makes the prefix bold */
+}
+
+/* Night mode styles */
+#dayMode, #nightMode {
+    position: fixed;
+    top: 80px;
+    right: 45px;
+    width: 250px; /* Adjust to the actual width of your image */
+    height: 100px;
+}
+
+

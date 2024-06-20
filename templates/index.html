@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record Audio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="nighttime">
+      <link rel="stylesheet" href="/static/styles.css" /> 
+      <div id="chatBox" style="background-image: url('/static/assets/pixel-chat-box.png');">
+          <div id="gptResponseText" class="chat-text"><span id="gpt-prefix">PixelGPT:</span> Hello! I am PixelGPT how may I be of Service...</div>
+          <img src="/static/assets/start-not-pressed.png" alt="Start Recording" id="startRecord" class="clickable-image">
+      <img src="/static/assets/start-pressed.png" alt="Start Recording" id="startPressed" class="clickable-image" style="display: none;">
+      <img src="/static/assets/stop-not-pressed.png" alt="Stop Recording" id="stopRecord" class="clickable-image">
+      <img src="/static/assets/stop-press.png" alt="Stop Recording" id="stopPressed" class="clickable-image" style="display: none;"">
+      <img src="/static/assets/toggle-day.png" alt="Day Mode" id="dayMode" class="clickable-image">
+      <img src="/static/assets/toggle-night.png" alt="Night Mode" id="nightMode" class="clickable-image" style="display: none;">
+      <img src="/static/assets/start-not-pressed-day.png" alt="Start Recording" id="startRecordDay" class="clickable-image" style="display: none";>
+      <img src="/static/assets/start-pressed-day.png" alt="Start Recording" id="startPressedDay" class="clickable-image" style="display: none;">
+      <img src="/static/assets/stop-not-pressed-day.png" alt="Stop Recording" id="stopRecordDay" class="clickable-image" style="display: none;"">
+      <img src="/static/assets/stop-pressed-day.png" alt="Stop Recording" id="stopPressedDay" class="clickable-image" style="display: none;">
+    </div>
+     <!-- Toggle Button for Day/Night -->
+    <div id="toggleTheme" class="theme-switch">
+      
+    </div>
+    <script src="/static/app.js"></script>
+</div>
+    <script>
+       
+    // Set initial background to night mode
+      document.body.style.backgroundImage = "url('/static/assets/background-tavern.png')";
+    
+    // Function to switch to day mode
+    function switchToDayMode() {
+        document.body.style.backgroundImage = "url('/static/assets/background-tavern-day.png')";
+        document.getElementById("dayMode").style.display = "none";
+        document.getElementById("nightMode").style.display = "inline";
+        document.getElementById("startRecordDay").style.display = "inline";
+        document.getElementById("startPressedDay").style.display = "none";
+        document.getElementById("stopRecordDay").style.display = "inline";
+        document.getElementById("stopPressedDay").style.display = "none";
+        document.getElementById("startRecord").style.display = "none";
+        document.getElementById("startPressed").style.display = "none";
+        document.getElementById("stopRecord").style.display = "none";
+        document.getElementById("stopPressed").style.display = "none";
+        document.getElementById("gpt-prefix").style.color = "#03e5f1";
+    }
+    
+    // Function to switch to night mode
+    function switchToNightMode() {
+        document.body.style.backgroundImage = "url('/static/assets/background-tavern.png')";
+        document.getElementById("nightMode").style.display = "none";
+        document.getElementById("dayMode").style.display = "inline";
+        document.getElementById("startRecord").style.display = "inline";
+        document.getElementById("startPressed").style.display = "none";
+        document.getElementById("stopRecord").style.display = "inline";
+        document.getElementById("stopPressed").style.display = "none";
+        document.getElementById("startRecordDay").style.display = "none";
+        document.getElementById("startPressedDay").style.display = "none";
+        document.getElementById("stopRecordDay").style.display = "none";
+        document.getElementById("stopPressedDay").style.display = "none";
+        document.getElementById("gpt-prefix").style.color = "orange";
+    }
+    
+    // Add event listeners to your day and night mode buttons
+    document.getElementById('dayMode').addEventListener('click', switchToDayMode);
+    document.getElementById('nightMode').addEventListener('click', switchToNightMode);
+    </script>
+</body>
